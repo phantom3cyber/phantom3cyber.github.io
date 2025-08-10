@@ -1,174 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phantom3 Cybersecurity - Solutions for SMBs</title>
+    <title>Phantom3 Cyber - Cybersecurity Research & Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        header {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e74c3c 3px solid;
+        .hero-bg {
+            background-image: 
+                linear-gradient(to bottom, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 1) 100%),
+                url('https://placehold.co/1920x1080/000000/4a044e?text=P3C');
+            background-size: cover;
+            background-position: center;
         }
-        header a {
-            color: #ecf0f1;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+        .cta-button {
+            transition: all 0.3s ease;
         }
-        header ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(76, 29, 149, 0.4);
         }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        .highlight, header .current a {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        #showcase {
-            min-height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900/?cybersecurity') no-repeat center center/cover;
-            text-align: center;
-            color: #ecf0f1;
-        }
-        #showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
-        #showcase p {
-            font-size: 20px;
-        }
-        #boxes {
-            margin-top: 20px;
-        }
-        #boxes .box {
-            float: left;
-            text-align: center;
-            width: 30%;
-            padding: 10px;
-            background: #fff;
-            margin: 1.66%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
-        }
-        #boxes .box img {
-            width: 90px;
-        }
-        footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #ecf0f1;
-            background-color: #2c3e50;
-            text-align: center;
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #6d28d9;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Phantom3</span> Cybersecurity</h1>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">
+                Phantom<span class="text-violet-500">3</span> Cyber
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-slate-300 hover:text-violet-400 transition-colors">About</a>
+                <a href="#services" class="text-slate-300 hover:text-violet-400 transition-colors">Services</a>
+                <a href="#founder" class="text-slate-300 hover:text-violet-400 transition-colors">Founder</a>
+                <a href="#contact" class="bg-violet-600 hover:bg-violet-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">Contact Us</a>
             </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
+            <a href="#about" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">About</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Services</a>
+            <a href="#founder" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Founder</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Contact Us</a>
         </div>
     </header>
 
-    <section id="showcase">
-        <div class="container">
-            <h1>Cybersecurity Solutions for SMBs</h1>
-            <p>Protecting your business in the digital age</p>
+    <!-- Hero Section -->
+    <main class="hero-bg">
+        <div class="min-h-screen flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
+                    AI-Driven Cybersecurity Research & Engineering.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                    Delivering innovative offensive and defensive security solutions for the most complex digital ecosystems.
+                </p>
+                <a href="#contact" class="cta-button inline-block bg-violet-600 hover:bg-violet-700 text-white font-bold py-4 px-8 rounded-lg text-lg">
+                    Schedule a Consultation
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- About the Company Section -->
+    <section id="about" class="py-20 sm:py-32">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-violet-900/50 rounded-lg transform rotate-3"></div>
+                    <img src="https://placehold.co/600x400/1e1b4b/e2e8f0?text=Our+Mission" alt="Cybersecurity strategy" class="relative rounded-lg shadow-2xl w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Mission & Philosophy</h2>
+                    <p class="text-slate-400 mb-4">
+                        At Phantom3 Cyber, our mission is to secure the future of digital innovation. We tackle the hardest, most ill-defined cybersecurity challenges with a blend of deep technical expertise and a forward-thinking, research-driven approach. We believe in building resilient systems from the ground up.
+                    </p>
+                    <p class="text-slate-400">
+                        Our philosophy is rooted in collaboration. We partner with industry leaders and academic institutions to push the boundaries of what's possible in cybersecurity, translating cutting-edge concepts into practical, deployable solutions that protect critical assets against next-generation threats.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="boxes">
-        <div class="container">
-            <div class="box">
-                <img src="https://img.icons8.com/fluent-systems-regular/96/000000/cyber-security.png" alt="Cybersecurity Icon">
-                <h3>Cybersecurity Consulting</h3>
-                <p>Tailored solutions for small to medium-sized businesses</p>
-            </div>
-            <div class="box">
-                <img src="https://img.icons8.com/fluent-systems-regular/96/000000/research.png" alt="Research Icon">
-                <h3>Research & Development</h3>
-                <p>Cutting-edge cybersecurity research and innovation</p>
-            </div>
-            <div class="box">
-                <img src="https://img.icons8.com/fluent-systems-regular/96/000000/training.png" alt="Training Icon">
-                <h3>Training & Education</h3>
-                <p>Empowering your team with cybersecurity knowledge</p>
+    <!-- Services Section -->
+    <section id="services" class="py-20 sm:py-32 bg-gray-900/50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Our Services</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mb-12">We provide a comprehensive suite of services to identify vulnerabilities and strengthen your defenses.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                    <div class="text-violet-400 mb-4">
+                        <i data-feather="briefcase" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Security Consultancy</h3>
+                    <p class="text-slate-400">
+                        Providing strategic guidance and expert advice to help you navigate the complex threat landscape and build a robust security posture.
+                    </p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                     <div class="text-violet-400 mb-4">
+                        <i data-feather="compass" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cybersecurity Research</h3>
+                    <p class="text-slate-400">
+                        Partnering with industry and academia to conduct cutting-edge research and solve the most challenging cybersecurity problems.
+                    </p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                     <div class="text-violet-400 mb-4">
+                        <i data-feather="shield" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Secure by Design</h3>
+                    <p class="text-slate-400">
+                        Integrating security principles into the entire system lifecycle, from initial concept to deployment, to build inherently resilient systems.
+                    </p>
+                </div>
+                 <!-- Service Card 4 -->
+                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                     <div class="text-violet-400 mb-4">
+                        <i data-feather-cpu" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">AI-Driven Cybersecurity</h3>
+                    <p class="text-slate-400">
+                        Applying advanced AI and ML for predictive threat intelligence, automated defense, and next-generation security operations.
+                    </p>
+                </div>
+                 <!-- Service Card 5 -->
+                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                     <div class="text-violet-400 mb-4">
+                        <i data-feather="zap" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cybersecurity of AI</h3>
+                    <p class="text-slate-400">
+                        Securing AI and machine learning systems against novel adversarial attacks, ensuring their integrity, confidentiality, and availability.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2023 Phantom3 Cybersecurity. All rights reserved.</p>
+    <!-- Founder Section -->
+    <section id="founder" class="py-20 sm:py-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">About the Founder</h2>
+                 <p class="text-slate-400 max-w-2xl mx-auto">The expertise and vision behind Phantom3 Cyber.</p>
+            </div>
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                 <div class="relative text-center">
+                    <img src="https://placehold.co/400x400/1e1b4b/e2e8f0?text=Dr.+Arun+V." alt="Dr. Arun Viswanathan" class="relative rounded-full shadow-2xl w-80 h-80 mx-auto border-4 border-gray-700">
+                     <div class="absolute inset-0 bg-violet-900/50 rounded-full transform -rotate-3 -z-10 w-80 h-80 mx-auto"></div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Dr. Arun Viswanathan</h3>
+                    <p class="text-slate-400 mb-4">
+                        Dr. Viswanathan is a seasoned cybersecurity expert with over two decades of experience in research and engineering. His work focuses on AI/ML-driven security solutions, cyber risk assessments, penetration testing, and large-scale data analysis. He has a proven track record of developing innovative security tools and leading high-impact research teams.
+                    </p>
+                    <p class="text-slate-400 mb-4">
+                        With extensive experience spanning startups, large organizations like Microsoft and JPL, and academia, Dr. Viswanathan thrives on tackling hard, ill-defined problems. His background in both theoretical research and practical implementation has led to significant contributions in aerospace and critical infrastructure security. He is a recognized leader in the aerospace cybersecurity community, holding leadership roles in AIAA and IEEE.
+                    </p>
+                     <p class="text-slate-400">
+                        He holds a PhD in Computer Science from the University of Southern California, is a well-published researcher with over 450 citations, and holds a U.S. patent for a novel cyber risk assessment tool.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 sm:py-32 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Secure Your Future</h2>
+                <p class="text-slate-400 mb-8">
+                    Ready to elevate your security? Reach out for a confidential consultation.
+                </p>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Your Name" class="w-full bg-gray-800 text-white p-4 rounded-lg border border-gray-700 focus:ring-2 focus:ring-violet-500 focus:outline-none">
+                        <input type="email" placeholder="Your Email" class="w-full bg-gray-800 text-white p-4 rounded-lg border border-gray-700 focus:ring-2 focus:ring-violet-500 focus:outline-none">
+                    </div>
+                    <textarea placeholder="Your Message" rows="5" class="w-full bg-gray-800 text-white p-4 rounded-lg border border-gray-700 focus:ring-2 focus:ring-violet-500 focus:outline-none"></textarea>
+                    <button type="submit" class="cta-button w-full bg-violet-600 hover:bg-violet-700 text-white font-bold py-4 px-8 rounded-lg text-lg">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400">&copy; 2025 Phantom3 Cyber. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://github.com/neoblitz" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400"><i data-feather="github"></i></a>
+                    <a href="https://bit.ly/scholar_av" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400"><i data-feather="book"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-violet-400"><i data-feather="linkedin"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-violet-400"><i data-feather="twitter"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
-</body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
-        $(document).ready(function() {
-            // Smooth scrolling for navigation links
-            $('nav a').on('click', function(event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-                        window.location.hash = hash;
-                    });
-                }
-            });
+        // Feather Icons
+        feather.replace();
 
-            // Add hover effect to service boxes
-            $('.box').hover(
-                function() { $(this).addClass('box-hover'); },
-                function() { $(this).removeClass('box-hover'); }
-            );
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-            // Add a simple contact form submission (for demonstration)
-            $('#contact-form').submit(function(e) {
-                e.preventDefault();
-                alert('Thank you for your message. We will get back to you soon!');
-                this.reset();
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
+
+        // Header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glass-effect', 'shadow-lg');
+            } else {
+                header.classList.remove('glass-effect', 'shadow-lg');
+            }
+        });
     </script>
+</body>
 </html>
