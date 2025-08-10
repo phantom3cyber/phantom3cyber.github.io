@@ -44,11 +44,11 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">
-                Phantom<span class="text-violet-500">3</span> Cyber
+            <a href="#" aria-label="Phantom3 Cyber Homepage" class="flex items-center">
+                <img src="./assets/logo.png" alt="Phantom3 Cyber Logo" class="h-16 w-auto">
+                <span class="ml-3 text-[#652f9c] text-xl sm:text-2xl font-bold tracking-tight leading-none drop-shadow-sm">phantom3cyber.com</span>
             </a>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#about" class="text-slate-300 hover:text-violet-400 transition-colors">About</a>
@@ -60,7 +60,6 @@
                 <i data-feather="menu"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
             <a href="#about" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">About</a>
             <a href="#services" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Services</a>
@@ -69,7 +68,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <main class="hero-bg">
         <div class="min-h-screen flex items-center justify-center">
             <div class="text-center px-4">
@@ -86,7 +84,6 @@
         </div>
     </main>
 
-    <!-- About the Company Section -->
     <section id="about" class="py-20 sm:py-32">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -107,13 +104,11 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="py-20 sm:py-32 bg-gray-900/50">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Our Services</h2>
             <p class="text-slate-400 max-w-2xl mx-auto mb-12">We provide a comprehensive suite of services to secure your systems.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
                 <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
                     <div class="text-violet-400 mb-4">
                         <i data-feather="briefcase" class="w-10 h-10"></i>
@@ -123,7 +118,6 @@
                         Receive strategic guidance from industry experts to navigate the complex threat landscape and build a truly robust security posture.
                     </p>
                 </div>
-                <!-- Service Card 2 -->
                 <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
                      <div class="text-violet-400 mb-4">
                         <i data-feather="compass" class="w-10 h-10"></i>
@@ -133,7 +127,6 @@
                         Partnering with industry and academia to conduct cutting-edge research and solve the most challenging cybersecurity problems.
                     </p>
                 </div>
-                <!-- Service Card 3 -->
                 <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
                      <div class="text-violet-400 mb-4">
                         <i data-feather="shield" class="w-10 h-10"></i>
@@ -143,8 +136,7 @@
                         Integrating security principles into the entire system lifecycle, from initial concept to deployment, to build inherently resilient systems.
                     </p>
                 </div>
-                 <!-- Service Card 4 -->
-                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                 <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
                      <div class="text-violet-400 mb-4">
                         <i data-feather="cpu" class="w-10 h-10"></i>
                     </div>
@@ -153,8 +145,7 @@
                         Leverage advanced AI and machine learning for predictive threat intelligence and automated defense, keeping you steps ahead of attackers.
                     </p>
                 </div>
-                 <!-- Service Card 5 -->
-                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                 <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
                      <div class="text-violet-400 mb-4">
                         <i data-feather="zap" class="w-10 h-10"></i>
                     </div>
@@ -163,8 +154,7 @@
                         Protect your AI and machine learning systems against novel adversarial attacks. We ensure the integrity, confidentiality, and resilience of your most innovative assets.
                     </p>
                 </div>
-                 <!-- Service Card 6 -->
-                <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+                 <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
                      <div class="text-violet-400 mb-4">
                         <i data-feather="book-open" class="w-10 h-10"></i>
                     </div>
@@ -177,7 +167,6 @@
         </div>
     </section>
 
-    <!-- Founder Section -->
     <section id="founder" class="py-20 sm:py-32">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
@@ -205,7 +194,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-20 sm:py-32 bg-gray-900/50">
         <div class="container mx-auto px-6">
             <div class="max-w-2xl mx-auto text-center">
@@ -228,7 +216,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-900">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -312,4 +299,3 @@
     </script>
 </body>
 </html>
-
