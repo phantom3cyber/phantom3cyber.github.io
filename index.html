@@ -17,12 +17,27 @@
   <meta name="twitter:title" content="Phantom3 Cyber - Cybersecurity Research & Consultancy">
   <meta name="twitter:description" content="Cybersecurity research and consulting. Engineering resilience in an AI-powered digital world.">
   <meta name="twitter:image" content="https://phantom3cyber.com/assets/logo.png">
+  <link rel="icon" href="/assets/logo.png" type="image/png" sizes="any">
+  <link rel="preload" as="image" href="./assets/logo.png" fetchpriority="high">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Phantom3 Cyber",
+    "url": "https://phantom3cyber.com/",
+    "logo": "https://phantom3cyber.com/assets/logo.png",
+    "sameAs": [
+      "https://github.com/phantom3cyber",
+      "https://www.linkedin.com/in/arunaviswanathan/"
+    ]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="https://placehold.co/1920x1080/000000/4a044e?text=P3C">
-  <script src="https://unpkg.com/feather-icons" defer></script>
+  <script src="https://unpkg.com/feather-icons@4.29.0/dist/feather.min.js" defer></script>
   <style>
     :root {
       --p3c-purple: #652f9c; /* brand accent */
@@ -59,6 +74,16 @@
 
     /* Ensure anchor targets aren't hidden behind fixed header */
     section { scroll-margin-top: 5rem; }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -77,9 +102,9 @@
         </span>
       </a>
       <div class="hidden md:flex space-x-8 items-center">
-        <a href="#about" class="text-slate-300 hover:text-violet-400 transition-colors">About</a>
+        <a href="#about" class="text-slate-300 hover:text-violet-400 transition-colors">Mission</a>
         <a href="#services" class="text-slate-300 hover:text-violet-400 transition-colors">Services</a>
-        <a href="#founder" class="text-slate-300 hover:text-violet-400 transition-colors">Founder</a>
+        <a href="#founder" class="text-slate-300 hover:text-violet-400 transition-colors">About Us</a>
         <a href="#contact" class="brand-bg hover:bg-violet-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">Contact Us</a>
       </div>
       <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" type="button" aria-controls="mobile-menu" aria-expanded="false">
@@ -88,9 +113,9 @@
       </button>
     </nav>
     <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
-      <a href="#about" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">About</a>
+      <a href="#about" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Mission</a>
       <a href="#services" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Services</a>
-      <a href="#founder" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Founder</a>
+      <a href="#founder" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">About Us</a>
       <a href="#contact" class="block py-2 px-4 text-sm text-slate-300 hover:bg-violet-700/50">Contact Us</a>
     </div>
   </header>
@@ -213,7 +238,7 @@
           <h3 class="text-2xl font-bold text-white mb-4">Dr. Arun Viswanathan</h3>
           <p class="text-slate-400 mb-4">
             Dr. Viswanathan is a seasoned cybersecurity expert with over two decades of experience in research and engineering across various domains (large-scale distributed systems, space systems, and power grids).
-            His work focuses on AI/ML-driven security solutions, cyber risk assessments, penetration testing, modeling and reasoning, threat detection, and large-scale data analysis.
+            His work focuses on AI/ML-driven security solutions, engineering resilient systems, cyber risk assessments, penetration testing, modeling and reasoning, threat detection, and large-scale data analysis.
             He has a proven track record of developing innovative offensive and defensive security tools, leading research teams, and contributing to the global security community. 
           </p>
           <p class="text-slate-400 mb-4">
@@ -224,6 +249,18 @@
             He holds a PhD in Computer Science from USC, is well-published with 500+ citations, and holds a U.S. patent
             for a novel cyber risk assessment tool.
           </p>
+          <!-- Social icons moved from footer -->
+          <div class="mt-6 flex items-center space-x-4">
+            <a href="https://www.linkedin.com/in/arunaviswanathan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-violet-400">
+              <i data-feather="linkedin" class="w-6 h-6"></i>
+            </a>
+            <a href="https://github.com/phantom3cyber" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-slate-400 hover:text-violet-400">
+              <i data-feather="github" class="w-6 h-6"></i>
+            </a>
+            <a href="https://bit.ly/scholar_av" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" class="text-slate-400 hover:text-violet-400">
+              <i data-feather="book" class="w-6 h-6"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -260,19 +297,18 @@
     <div class="container mx-auto px-6 py-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-slate-400">&copy; 2025 Phantom3 Cyber. All Rights Reserved.</p>
-        <div class="flex space-x-4 mt-4 md:mt-0">
-          <a href="https://github.com/phantom3cyber" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400"><i data-feather="github"></i></a>
-          <a href="https://bit.ly/scholar_av" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400"><i data-feather="book"></i></a>
-          <a href="https://www.linkedin.com/in/arunaviswanathan/" class="text-slate-400 hover:text-violet-400"><i data-feather="linkedin"></i></a>
-          <!-- <a href="#" class="text-slate-400 hover:text-violet-400"><i data-feather="twitter"></i></a> -->
-        </div>
+        <!-- Social icons moved to founder section -->
       </div>
     </div>
   </footer>
 
   <script>
-    // Feather Icons
-    feather.replace();
+    // Feather Icons (ensure it runs after DOM is ready and library is loaded)
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.feather && typeof window.feather.replace === 'function') {
+        window.feather.replace({ width: 24, height: 24, 'stroke-width': 1.75 });
+      }
+    });
 
     // Mobile Menu Toggle + a11y state
     const mobileMenuButton = document.getElementById('mobile-menu-button');
