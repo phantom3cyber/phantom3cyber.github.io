@@ -5,11 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Phantom3 Cyber - Cybersecurity Research & Consultancy</title>
   <meta name="description" content="Phantom3 Cyber (P3C): Cybersecurity research and consulting. Engineering resilience in an AI-powered digital world." />
+  <link rel="canonical" href="https://phantom3cyber.com/">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Phantom3 Cyber - Cybersecurity Research & Consultancy">
+  <meta property="og:description" content="Phantom3 Cyber (P3C): Cybersecurity research and consulting. Engineering resilience in an AI-powered digital world.">
+  <meta property="og:url" content="https://phantom3cyber.com/">
+  <meta property="og:image" content="https://phantom3cyber.com/assets/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Phantom3 Cyber - Cybersecurity Research & Consultancy">
+  <meta name="twitter:description" content="Cybersecurity research and consulting. Engineering resilience in an AI-powered digital world.">
+  <meta name="twitter:image" content="https://phantom3cyber.com/assets/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preload" as="image" href="https://placehold.co/1920x1080/000000/4a044e?text=P3C">
+  <script src="https://unpkg.com/feather-icons" defer></script>
   <style>
     :root {
       --p3c-purple: #652f9c; /* brand accent */
@@ -43,16 +56,22 @@
     @media (min-width: 768px) {
       .mission-icon { width: 3.5rem; height: 3.5rem; }
     }
+
+    /* Ensure anchor targets aren't hidden behind fixed header */
+    section { scroll-margin-top: 5rem; }
   </style>
 </head>
 <body class="antialiased">
 
+  <!-- Skip to content -->
+  <a href="#main" class="sr-only focus:not-sr-only absolute left-2 top-2 z-[100] bg-white text-black px-3 py-2 rounded">Skip to content</a>
+
   <!-- HEADER -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center" aria-label="Main">
       <a href="#" aria-label="Phantom3 Cyber Homepage" class="flex items-center">
         <!-- Swap this src to your generated desktop/mobile logo assets if desired -->
-        <img src="./assets/logo.png" alt="Phantom3 Cyber Logo" class="h-12 sm:h-16 w-auto">
+        <img src="./assets/logo.png" alt="Phantom3 Cyber Logo" class="h-12 sm:h-16 w-auto" loading="eager" decoding="async" fetchpriority="high">
         <span class="ml-3 text-[color:var(--p3c-purple)] text-xl sm:text-2xl font-bold tracking-tight leading-none drop-shadow-sm">
           phantom3cyber.com
         </span>
@@ -63,7 +82,8 @@
         <a href="#founder" class="text-slate-300 hover:text-violet-400 transition-colors">Founder</a>
         <a href="#contact" class="brand-bg hover:bg-violet-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">Contact Us</a>
       </div>
-      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" type="button" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
         <i data-feather="menu"></i>
       </button>
     </nav>
@@ -76,14 +96,14 @@
   </header>
 
   <!-- HERO -->
-  <main class="hero-bg">
+  <main id="main" class="hero-bg">
     <div class="min-h-screen flex items-center justify-center">
       <div class="text-center px-4">
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
           Engineering Resilience in an AI-Powered Digital World.
         </h1>
         <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-          We help you protect your most critical digital assets from next-generation threats.
+          We help you protect your critical digital assets from next-generation threats.
         </p>
         <a href="#contact" class="cta-button inline-block brand-bg hover:bg-violet-700 text-white font-bold py-4 px-8 rounded-lg text-lg">
           Get in touch
@@ -98,7 +118,7 @@
       <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="relative">
           <div class="absolute inset-0 bg-violet-900/50 rounded-lg transform rotate-3"></div>
-          <img src="./assets/mission.png" alt="Cybersecurity strategy" class="relative rounded-lg shadow-2xl w-full">
+          <img src="./assets/mission.png" alt="Cybersecurity strategy" class="relative rounded-lg shadow-2xl w-full" loading="lazy" decoding="async">
         </div>
         <div>
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Mission & Philosophy</h2>
@@ -142,34 +162,35 @@
         </div>
 
         <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
+          <div class="brand-accent mb-4"><i data-feather="cpu" class="w-10 h-10"></i></div>
+          <h3 class="text-xl font-bold text-white mb-2">AI x Cybersecurity</h3>
+          <p class="text-slate-400">
+            Harness AI/ML for cutting-edge cybersecurity solutions, while protecting AI systems against adversarial threats.
+          </p>
+        </div>
+
+        <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
           <div class="brand-accent mb-4"><i data-feather="shield" class="w-10 h-10"></i></div>
-          <h3 class="text-xl font-bold text-white mb-2">Secure by Design</h3>
+          <h3 class="text-xl font-bold text-white mb-2">Engineering Resilient Systems</h3>
           <p class="text-slate-400">
             Bake security into every phase—from concept to deployment—for inherent resilience.
           </p>
         </div>
 
         <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
-          <div class="brand-accent mb-4"><i data-feather="cpu" class="w-10 h-10"></i></div>
-          <h3 class="text-xl font-bold text-white mb-2">AI-Driven Cybersecurity</h3>
+          <div class="brand-accent mb-4"><i data-feather="shield" class="w-10 h-10"></i></div>
+          <h3 class="text-xl font-bold text-white mb-2">AI-powered Development</h3>
           <p class="text-slate-400">
-            Harness AI/ML for predictive intelligence and automated defense.
+            Leverage GenAI tools to exponentially boost productivity, improve performance and enhance quality across the software development lifecycle.
           </p>
         </div>
 
-        <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
-          <div class="brand-accent mb-4"><i data-feather="zap" class="w-10 h-10"></i></div>
-          <h3 class="text-xl font-bold text-white mb-2">Cybersecurity of AI</h3>
-          <p class="text-slate-400">
-            Protect AI systems against adversarial attacks and integrity risks.
-          </p>
-        </div>
-
+      
         <div class="service-card glass-effect p-8 rounded-lg text-left transition-all duration-300 border border-transparent">
           <div class="brand-accent mb-4"><i data-feather="book-open" class="w-10 h-10"></i></div>
           <h3 class="text-xl font-bold text-white mb-2">Training & Education</h3>
           <p class="text-slate-400">
-            Bespoke workshops and programs to build a culture of security.
+            Bespoke workshops and training programs to build a culture of security.
           </p>
         </div>
       </div>
@@ -185,22 +206,22 @@
       </div>
       <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="relative text-center">
-          <img src="./assets/arun-viswanathan.jpg" alt="Dr. Arun Viswanathan"
-               class="relative rounded-full shadow-2xl w-80 h-80 mx-auto border-4 border-gray-700 object-cover">
+          <img src="./assets/arun-viswanathan.jpg" alt="Dr. Arun Viswanathan" class="relative rounded-full shadow-2xl w-80 h-80 mx-auto border-4 border-gray-700 object-cover" loading="lazy" decoding="async" width="320" height="320">
           <div class="absolute inset-0 bg-violet-900/50 rounded-full transform -rotate-3 -z-10 w-80 h-80 mx-auto"></div>
         </div>
         <div>
           <h3 class="text-2xl font-bold text-white mb-4">Dr. Arun Viswanathan</h3>
           <p class="text-slate-400 mb-4">
-            Dr. Viswanathan is a seasoned cybersecurity expert with over two decades of experience in research and engineering.
-            His work focuses on AI/ML-driven security solutions, cyber risk assessments, penetration testing, and large-scale data analysis.
+            Dr. Viswanathan is a seasoned cybersecurity expert with over two decades of experience in research and engineering across various domains (large-scale distributed systems, space systems, and power grids).
+            His work focuses on AI/ML-driven security solutions, cyber risk assessments, penetration testing, modeling and reasoning, threat detection, and large-scale data analysis.
+            He has a proven track record of developing innovative offensive and defensive security tools, leading research teams, and contributing to the global security community. 
           </p>
           <p class="text-slate-400 mb-4">
-            With experience spanning startups, Microsoft, JPL, and academia, he tackles hard problems and delivers practical,
+            With experience spanning startups, Microsoft, NASA Jet Propulsion Laboratory, and academia, he tackles hard problems and delivers practical,
             high-impact security results across aerospace and critical infrastructure.
           </p>
           <p class="text-slate-400">
-            He holds a PhD in Computer Science from USC, is well-published with 450+ citations, and holds a U.S. patent
+            He holds a PhD in Computer Science from USC, is well-published with 500+ citations, and holds a U.S. patent
             for a novel cyber risk assessment tool.
           </p>
         </div>
@@ -223,6 +244,8 @@
           </div>
           <textarea placeholder="Your Message" name="message" rows="5"
                     class="w-full bg-gray-800 text-white p-4 rounded-lg border border-gray-700 focus:ring-2 focus:ring-violet-500 focus:outline-none" required></textarea>
+          <!-- Honeypot field to reduce spam -->
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit" class="cta-button w-full brand-bg hover:bg-violet-700 text-white font-bold py-4 px-8 rounded-lg text-lg">
             Send Message
           </button>
@@ -240,8 +263,8 @@
         <div class="flex space-x-4 mt-4 md:mt-0">
           <a href="https://github.com/phantom3cyber" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400"><i data-feather="github"></i></a>
           <a href="https://bit.ly/scholar_av" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400"><i data-feather="book"></i></a>
-          <a href="#" class="text-slate-400 hover:text-violet-400"><i data-feather="linkedin"></i></a>
-          <a href="#" class="text-slate-400 hover:text-violet-400"><i data-feather="twitter"></i></a>
+          <a href="https://www.linkedin.com/in/arunaviswanathan/" class="text-slate-400 hover:text-violet-400"><i data-feather="linkedin"></i></a>
+          <!-- <a href="#" class="text-slate-400 hover:text-violet-400"><i data-feather="twitter"></i></a> -->
         </div>
       </div>
     </div>
@@ -251,14 +274,20 @@
     // Feather Icons
     feather.replace();
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle + a11y state
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isOpen = mobileMenu.classList.toggle('hidden') === false;
+      mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
     });
+
+    // Close mobile menu when a link is clicked
     document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+      });
     });
 
     // Header background on scroll
@@ -268,11 +297,14 @@
       else header.classList.remove('glass-effect','shadow-lg');
     });
 
-    // Formspree Contact Form Handler
+    // Formspree Contact Form Handler + honeypot
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
     async function handleSubmit(event) {
       event.preventDefault();
+      // simple honeypot check
+      const hp = contactForm.querySelector('input[name="_gotcha"]');
+      if (hp && hp.value) { return; }
       const data = new FormData(event.target);
       try {
         const response = await fetch(event.target.action, {
